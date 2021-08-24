@@ -24,7 +24,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'//dex
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'com.google.android.material:material:1.2.1'
-    compile project(':xrecyclerview')
+    implementation project(':xrecyclerview')
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
