@@ -930,4 +930,29 @@ public class XRecyclerView extends RecyclerView {
         void onAlphaChange(int alpha);  /** you can handle the alpha insert it */
         int setLimitHeight(); /** set a height for the begging of the alpha start to change */
     }
+
+    private OnNscrollChanged mOnNscrollChanged;
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        if (mOnNscrollChanged != null) {
+            mOnNscrollChanged.onScroll(l, t, oldl, oldt);
+        }
+    }
+
+    public void setOnScrollChanged(OnNscrollChanged mOnNscrollChanged) {
+        this.mOnNscrollChanged = mOnNscrollChanged;
+    }
+
+    public interface OnNscrollChanged {
+        /**
+         * 滑动的方法
+         *
+         * @param left    左边
+         * @param top     上边
+         * @param oldLeft 之前的左边
+         * @param oldTop  之前的上边
+         */
+        void onScroll(int left, int top, int oldLeft, int oldTop);
+    }
 }
