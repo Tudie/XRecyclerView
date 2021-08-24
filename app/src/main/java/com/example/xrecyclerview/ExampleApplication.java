@@ -2,12 +2,14 @@ package com.example.xrecyclerview;
 
 import android.app.Application;
 
+import androidx.multidex.MultiDexApplication;
+
 import com.squareup.leakcanary.LeakCanary;
 /**
  * Created by jianghejie on 16/12/1.
  */
 
-public class ExampleApplication extends Application {
+public class ExampleApplication extends MultiDexApplication {
     @Override public void onCreate() {
         super.onCreate();
         if (LeakCanary.isInAnalyzerProcess(this)) {
